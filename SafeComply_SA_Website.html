@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SafeComply SA | HSSEQ Compliance Documentation · Chantele Coetzer</title>
+<meta name="description" content="Professional South African HSSEQ compliance documentation and advisory. OHSA, MHSA, NEM:WA, NEMA, COIDA aligned. Safety Files, Risk Assessments, Legal Appointments. Contact Chantele Coetzer."/>
+<meta name="keywords" content="HSSEQ South Africa, SHEQ compliance, OHSA documentation, safety file, risk assessment, NEM:WA, COIDA, Limpopo"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root{
+  --ink:#0c1117;
+  --paper:#f6f1e9;
+  --accent:#c8420d;
+  --gold:#b8943a;
+  --steel:#1a2b38;
+  --mid:#4e5f6a;
+  --light:#e5dfd3;
+  --pale:#faf7f3;
+  --white:#ffffff;
+  --green:#25603a;
+  --green-l:#e6f2eb;
+  --danger:#aa2222;
+  --r:4px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--paper);color:var(--ink);font-family:'Barlow',sans-serif;line-height:1.65;overflow-x:hidden;}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.032'/%3E%3C/svg%3E");pointer-events:none;z-index:999;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--steel);display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;border-bottom:3px solid var(--accent);}
+.logo{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--paper);letter-spacing:.5px;}
+.logo em{color:var(--accent);font-style:normal;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:rgba(246,241,233,.72);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 22px!important;border-radius:var(--r);}
+.nav-cta:hover{background:#a83508!important;}
+
+/* HERO */
+.hero{min-height:94vh;background:var(--steel);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;align-items:center;}
+.hero-bg-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,.025) 59px,rgba(255,255,255,.025) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,.025) 59px,rgba(255,255,255,.025) 60px);pointer-events:none;}
+.hero-glow{position:absolute;right:-80px;top:-80px;width:560px;height:560px;background:radial-gradient(circle,rgba(200,66,13,.2) 0%,transparent 68%);pointer-events:none;}
+.hero-diagonal{position:absolute;bottom:0;right:0;width:0;height:0;border-style:solid;border-width:0 0 130px 1500px;border-color:transparent transparent var(--paper) transparent;}
+.hero-left{padding:88px 56px 88px 80px;position:relative;z-index:2;}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:22px;}
+.eyebrow::before{content:'';width:36px;height:2px;background:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.2vw,5.5rem);line-height:.96;color:var(--paper);margin-bottom:28px;font-weight:900;}
+.hero h1 .accent{color:var(--accent);}
+.hero-sub{color:rgba(246,241,233,.68);font-size:1.05rem;max-width:500px;margin-bottom:48px;font-weight:300;line-height:1.72;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:var(--white);padding:14px 34px;font-size:.82rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:var(--r);transition:all .25s;display:inline-block;}
+.btn-primary:hover{background:#a83508;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,66,13,.35);}
+.btn-ghost{background:transparent;color:var(--paper);padding:14px 34px;font-size:.82rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(246,241,233,.32);cursor:pointer;border-radius:var(--r);transition:all .25s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-right{display:flex;align-items:center;justify-content:center;padding:88px 80px 88px 32px;position:relative;z-index:2;}
+.stat-stack{display:flex;flex-direction:column;gap:14px;width:100%;max-width:340px;}
+.stat-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-left:4px solid var(--accent);padding:22px 26px;border-radius:var(--r);backdrop-filter:blur(6px);animation:fadeUp .6s ease both;}
+.stat-card:nth-child(2){border-left-color:var(--gold);animation-delay:.15s;}
+.stat-card:nth-child(3){border-left-color:#4aaa6b;animation-delay:.3s;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--paper);line-height:1;}
+.stat-lbl{font-size:.74rem;color:rgba(246,241,233,.55);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* TRUST */
+.trust{background:var(--ink);padding:18px 80px;display:flex;align-items:center;gap:32px;overflow:hidden;}
+.trust-lbl{font-size:.66rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.3);white-space:nowrap;flex-shrink:0;}
+.trust-wrap{display:flex;gap:32px;flex-wrap:wrap;}
+.trust-item{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:rgba(255,255,255,.48);letter-spacing:.8px;white-space:nowrap;}
+
+/* PROBLEM */
+.problem{background:var(--steel);display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.prob-card{background:rgba(255,255,255,.04);padding:44px 36px;border-top:4px solid transparent;transition:all .3s;cursor:default;}
+.prob-card:hover{background:rgba(255,255,255,.08);border-top-color:var(--accent);}
+.prob-icon{font-size:2rem;margin-bottom:16px;}
+.prob-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--paper);margin-bottom:12px;}
+.prob-card p{font-size:.88rem;color:rgba(246,241,233,.58);line-height:1.72;font-weight:300;}
+
+/* SECTIONS */
+section{padding:96px 80px;}
+.s-label{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;}
+h2.s-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,3.4vw,3.4rem);line-height:1;color:var(--steel);margin-bottom:20px;font-weight:900;}
+h2.s-title .accent{color:var(--accent);}
+.s-body{font-size:.98rem;color:var(--mid);max-width:640px;line-height:1.75;font-weight:300;}
+
+/* AUDIT TOOL */
+#tool{background:var(--paper);}
+.tool-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:56px;margin-top:60px;align-items:start;}
+.chk-group{margin-bottom:26px;}
+.chk-gtitle{font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--light);}
+.chk-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;cursor:pointer;}
+.chk-item input[type=checkbox]{width:15px;height:15px;accent-color:var(--accent);margin-top:3px;flex-shrink:0;cursor:pointer;}
+.chk-item label{font-size:.86rem;color:var(--ink);line-height:1.5;cursor:pointer;}
+.score-widget{background:var(--steel);border-radius:var(--r);padding:34px 38px;margin-bottom:22px;position:relative;overflow:hidden;}
+.score-widget::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(200,66,13,.2) 0%,transparent 70%);pointer-events:none;}
+.score-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;}
+.score-hdr h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--paper);}
+.score-hdr p{font-size:.76rem;color:rgba(246,241,233,.45);font-weight:300;max-width:220px;text-align:right;}
+.score-num{font-family:'Playfair Display',serif;font-size:5rem;line-height:1;color:var(--paper);text-align:center;transition:color .4s;}
+.score-num.red{color:#ef5350;}
+.score-num.amber{color:var(--gold);}
+.score-num.green{color:#66bb6a;}
+.score-slbl{font-size:.72rem;color:rgba(246,241,233,.42);text-align:center;text-transform:uppercase;letter-spacing:2px;margin:4px 0 20px;}
+.score-bar-bg{background:rgba(255,255,255,.1);height:7px;border-radius:4px;overflow:hidden;margin-bottom:6px;}
+.score-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,#ef5350,var(--gold),#66bb6a);background-size:300% 100%;transition:width .65s ease;}
+.score-hint{font-size:.72rem;color:rgba(246,241,233,.4);text-align:center;}
+.findings-panel{background:var(--white);border:1px solid var(--light);border-radius:var(--r);overflow:hidden;}
+.findings-hdr{background:var(--light);padding:13px 18px;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid);display:flex;justify-content:space-between;}
+.finding-row{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--light);font-size:.84rem;transition:background .2s;}
+.finding-row:last-child{border-bottom:none;}
+.finding-row:hover{background:#fafaf8;}
+.fdot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.fdot.pass{background:#4caf50;}
+.fdot.fail{background:#f44336;}
+.fdot.na{background:#9e9e9e;}
+.finding-txt{flex:1;color:var(--ink);}
+.finding-ref{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--mid);background:var(--light);padding:2px 8px;border-radius:2px;}
+.btn-report{width:100%;background:var(--accent);color:var(--white);border:none;cursor:pointer;padding:15px;font-family:'Playfair Display',serif;font-size:1.05rem;letter-spacing:1px;border-radius:var(--r);margin-top:14px;transition:all .25s;}
+.btn-report:hover{background:#a83508;transform:translateY(-2px);}
+
+/* SERVICES */
+#services{background:var(--ink);}
+#services .s-title{color:var(--paper);}
+#services .s-body{color:rgba(246,241,233,.52);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;}
+.svc-card{background:rgba(255,255,255,.04);padding:40px 34px;border-bottom:3px solid transparent;transition:all .3s;cursor:default;position:relative;}
+.svc-card:hover{background:rgba(255,255,255,.08);border-bottom-color:var(--accent);}
+.svc-card.featured{background:rgba(200,66,13,.14);border-bottom-color:var(--accent);}
+.svc-badge{position:absolute;top:18px;right:18px;background:var(--accent);color:var(--white);font-size:.58rem;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;font-weight:600;}
+.svc-price{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--paper);line-height:1;margin-bottom:4px;}
+.svc-price span{font-size:.95rem;color:rgba(246,241,233,.48);font-family:'Barlow',sans-serif;}
+.svc-name{font-size:.95rem;font-weight:600;color:var(--paper);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;}
+.svc-desc{font-size:.84rem;color:rgba(246,241,233,.48);line-height:1.62;margin-bottom:20px;font-weight:300;}
+.svc-feats{list-style:none;}
+.svc-feats li{font-size:.83rem;color:rgba(246,241,233,.68);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:10px;font-weight:300;line-height:1.45;}
+.svc-feats li::before{content:'✓';color:var(--gold);font-size:.72rem;margin-top:2px;flex-shrink:0;}
+.delivery-note{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--gold);padding:16px 20px;border-radius:var(--r);margin-top:16px;}
+.delivery-note p{font-size:.82rem;color:rgba(246,241,233,.72);line-height:1.55;font-weight:300;}
+.delivery-note strong{color:var(--gold);}
+
+/* SAFETY FILE EXPAND */
+.safety-expand{margin-top:60px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);overflow:hidden;}
+.safety-expand-hdr{padding:24px 32px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08);}
+.safety-expand-hdr h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--paper);}
+.safety-expand-hdr span{color:var(--gold);font-size:.8rem;font-family:'JetBrains Mono',monospace;}
+.safety-expand-body{padding:28px 32px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.sf-section h4{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600;}
+.sf-section ul{list-style:none;}
+.sf-section li{font-size:.83rem;color:rgba(246,241,233,.65);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px;font-weight:300;}
+.sf-section li::before{content:'›';color:var(--accent);font-size:1rem;}
+
+/* LEG STRIP */
+.leg-strip{background:var(--steel);padding:56px 80px;}
+.leg-strip-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold);letter-spacing:2px;text-align:center;margin-bottom:24px;}
+.leg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.leg-card{background:rgba(255,255,255,.045);padding:22px 18px;text-align:center;transition:all .25s;cursor:default;}
+.leg-card:hover{background:rgba(255,255,255,.09);}
+.leg-act{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);letter-spacing:.8px;margin-bottom:7px;}
+.leg-title{font-size:.8rem;color:rgba(246,241,233,.72);line-height:1.4;}
+
+/* ABOUT */
+#about{background:var(--pale);display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.about-frame{background:var(--steel);padding:44px 40px;border-radius:var(--r);position:relative;overflow:hidden;}
+.about-frame::before{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(184,148,58,.2) 0%,transparent 70%);pointer-events:none;}
+.about-name{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--paper);line-height:1;margin-bottom:4px;font-weight:900;}
+.about-title{font-size:.74rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:26px;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.astat{background:rgba(255,255,255,.06);padding:18px;text-align:center;}
+.astat-n{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--accent);line-height:1;}
+.astat-l{font-size:.68rem;color:rgba(246,241,233,.48);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
+.about-text h3{font-family:'Playfair Display',serif;font-size:2rem;color:var(--steel);margin-bottom:18px;line-height:1.1;font-weight:900;}
+.about-text p{font-size:.94rem;color:var(--mid);line-height:1.77;margin-bottom:14px;font-weight:300;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
+.tag{background:var(--light);border:1px solid rgba(0,0,0,.08);padding:4px 12px;font-size:.7rem;color:var(--mid);border-radius:2px;letter-spacing:.4px;font-weight:500;}
+
+/* TESTIMONIAL */
+.testi{background:var(--paper);padding:88px 80px;text-align:center;}
+.testi blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,1.9vw,1.7rem);font-weight:700;color:var(--steel);max-width:760px;margin:0 auto 24px;line-height:1.65;font-style:italic;}
+.testi cite{font-size:.8rem;color:var(--mid);letter-spacing:1px;text-transform:uppercase;font-style:normal;font-weight:500;}
+
+/* CONTACT FORM */
+#contact{background:var(--steel);padding:96px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-left h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,3.8vw,4rem);color:var(--paper);line-height:.96;margin-bottom:20px;font-weight:900;}
+.contact-left p{font-size:.95rem;color:rgba(246,241,233,.58);font-weight:300;line-height:1.7;margin-bottom:8px;}
+.contact-details{margin-top:28px;display:flex;flex-direction:column;gap:14px;}
+.cdetail{display:flex;align-items:center;gap:14px;}
+.cdetail-icon{width:40px;height:40px;background:rgba(255,255,255,.07);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.cdetail-text{font-size:.88rem;color:rgba(246,241,233,.7);font-weight:300;}
+.cdetail-text strong{color:var(--paper);display:block;font-size:.8rem;letter-spacing:.5px;text-transform:uppercase;}
+
+/* FORM */
+.enquiry-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:36px 32px;}
+.enquiry-form h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--paper);margin-bottom:6px;}
+.enquiry-form p{font-size:.82rem;color:rgba(246,241,233,.48);margin-bottom:24px;font-weight:300;}
+.frow{display:grid;gap:12px;margin-bottom:12px;}
+.frow-2{grid-template-columns:1fr 1fr;}
+.frow-1{grid-template-columns:1fr;}
+input[type=text],input[type=email],input[type=tel],select,textarea{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:var(--paper);padding:11px 14px;font-size:.88rem;font-family:'Barlow',sans-serif;border-radius:var(--r);outline:none;transition:.2s;width:100%;}
+input::placeholder,textarea::placeholder{color:rgba(246,241,233,.4);}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.14);}
+select option{background:var(--steel);color:var(--paper);}
+textarea{resize:vertical;min-height:90px;}
+.btn-submit{width:100%;background:var(--accent);color:var(--white);border:none;cursor:pointer;padding:14px;font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:1px;border-radius:var(--r);margin-top:8px;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:10px;}
+.btn-submit:hover{background:#a83508;transform:translateY(-2px);}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.form-msg{margin-top:12px;padding:12px 16px;border-radius:var(--r);font-size:.84rem;display:none;}
+.form-msg.success{background:var(--green-l);color:var(--green);border:1px solid #a8d5b5;display:block;}
+.form-msg.error{background:#fce4e4;color:var(--danger);border:1px solid #f5b8b8;display:block;}
+.privacy-note{font-size:.72rem;color:rgba(246,241,233,.35);margin-top:10px;font-weight:300;}
+
+/* FOOTER */
+footer{background:var(--ink);padding:52px 80px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;border-top:3px solid var(--accent);}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--paper);margin-bottom:12px;}
+.footer-brand em{color:var(--accent);font-style:normal;}
+footer p{font-size:.8rem;color:rgba(255,255,255,.32);line-height:1.62;font-weight:300;}
+footer h4{font-size:.66rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:14px;}
+footer ul{list-style:none;}
+footer ul li{font-size:.82rem;color:rgba(255,255,255,.4);padding:5px 0;font-weight:300;}
+footer ul li a{color:rgba(255,255,255,.4);text-decoration:none;transition:.2s;}
+footer ul li a:hover{color:var(--gold);}
+.footer-bottom{background:rgba(0,0,0,.45);padding:16px 80px;display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:.7rem;color:rgba(255,255,255,.22);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,14,17,.86);backdrop-filter:blur(4px);z-index:500;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--white);max-width:700px;width:92%;border-radius:var(--r);overflow:hidden;animation:fadeUp .32s ease both;}
+.modal-hdr{background:var(--steel);padding:22px 30px;display:flex;justify-content:space-between;align-items:center;}
+.modal-hdr h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--paper);}
+.modal-close{background:none;border:none;color:rgba(246,241,233,.55);font-size:1.3rem;cursor:pointer;transition:.2s;}
+.modal-close:hover{color:var(--accent);}
+.modal-body{padding:30px;max-height:72vh;overflow-y:auto;}
+.report-sec h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--steel);margin-bottom:10px;padding-bottom:5px;border-bottom:2px solid var(--accent);margin-top:20px;}
+.report-sec:first-child h4{margin-top:0;}
+.r-item{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--light);font-size:.86rem;}
+.r-item:last-child{border-bottom:none;}
+.r-priority{padding:2px 9px;border-radius:2px;font-size:.66rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;flex-shrink:0;}
+.p-h{background:#fce4e4;color:#c62828;}
+.p-m{background:#fff8e1;color:#f57f17;}
+.p-l{background:#e8f5e9;color:#2e7d32;}
+.p-pass{background:#e8f5e9;color:#2e7d32;}
+.modal-ftr{background:var(--light);padding:18px 30px;display:flex;gap:12px;justify-content:flex-end;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  section{padding:60px 20px;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:56px 20px 40px;}
+  .hero-right{display:none;}
+  .problem{grid-template-columns:1fr;}
+  .tool-grid{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr;}
+  .safety-expand-body{grid-template-columns:1fr;}
+  #about{grid-template-columns:1fr;padding:60px 20px;}
+  #contact{grid-template-columns:1fr;padding:60px 20px;}
+  footer{grid-template-columns:1fr;padding:40px 20px;}
+  .footer-bottom{padding:14px 20px;flex-direction:column;gap:6px;}
+  .trust{padding:16px 20px;}
+  .leg-strip{padding:44px 20px;}
+  .leg-grid{grid-template-columns:1fr 1fr;}
+  .testi{padding:64px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════ -->
+<nav>
+  <div class="logo">Safe<em>Comply</em> SA</div>
+  <ul class="nav-links">
+    <li><a href="#tool">Free Audit Tool</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-left">
+    <div class="eyebrow">Senior HSSEQ Practitioner · 17+ Years</div>
+    <h1>South African<br/><span class="accent">HSSEQ</span><br/>Compliance<br/>Done Right.</h1>
+    <p class="hero-sub">Professional compliance documentation, safety files, and regulatory advisory — built exclusively on South African law. Delivered to your inbox and on a memory stick or secure link.</p>
+    <div class="hero-btns">
+      <a href="#tool" class="btn-primary">Run Free Compliance Check</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-stack">
+      <div class="stat-card"><div class="stat-num">17+</div><div class="stat-lbl">Years Industry Experience</div></div>
+      <div class="stat-card"><div class="stat-num">3+</div><div class="stat-lbl">Active Multi-Site Portfolios Managed</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-lbl">SA Legislation-Referenced Deliverables</div></div>
+    </div>
+  </div>
+  <div class="hero-diagonal"></div>
+</section>
+
+<!-- ═══ TRUST BAR ══════════════════════════════════ -->
+<div class="trust">
+  <span class="trust-lbl">Legislation Covered</span>
+  <div class="trust-wrap">
+    <span class="trust-item">OHSA Act 85/1993</span>
+    <span class="trust-item">MHSA Act 29/1996</span>
+    <span class="trust-item">NEMA Act 107/1998</span>
+    <span class="trust-item">NEM:WA Act 59/2008</span>
+    <span class="trust-item">COIDA Act 130/1993</span>
+    <span class="trust-item">GN R634 · Reg 11</span>
+    <span class="trust-item">SANS 10108 · SANS 1186</span>
+    <span class="trust-item">DMRE Licensing</span>
+    <span class="trust-item">LRA Act 66/1995</span>
+  </div>
+</div>
+
+<!-- ═══ PROBLEM ════════════════════════════════════ -->
+<div class="problem">
+  <div class="prob-card">
+    <div class="prob-icon">⚠️</div>
+    <h3>Compliance Gaps Cost Money</h3>
+    <p>Non-compliance fines under OHSA and NEMA can reach R5 million or more. An undetected gap in a legal appointment, signage register, or waste manifest exposes your business to criminal and civil liability under South African law.</p>
+  </div>
+  <div class="prob-card">
+    <div class="prob-icon">📋</div>
+    <h3>Generic Templates Fail Audits</h3>
+    <p>Documents not referenced to the correct South African Acts, Regulations, and GN numbers are challenged and rejected on sight. DMRE, DFFE, and DoEL inspectors identify non-compliant documentation immediately.</p>
+  </div>
+  <div class="prob-card">
+    <div class="prob-icon">🔍</div>
+    <h3>No Warning Before an Inspection</h3>
+    <p>Section 43 of the OHSA and Section 54 of the MHSA give inspectors authority to enter and shut down your operations without prior notice. Only organisations with current, properly referenced HSSEQ systems are protected.</p>
+  </div>
+</div>
+
+<!-- ═══ AUDIT TOOL ═════════════════════════════════ -->
+<section id="tool">
+  <div class="s-label">Interactive Tool · Free</div>
+  <h2 class="s-title">SA HSSEQ <span class="accent">Quick Audit</span></h2>
+  <p class="s-body">Assess your compliance posture in under 5 minutes. Select applicable items and receive an instant compliance score with prioritised findings — each referenced against South African law.</p>
+  <div class="tool-grid">
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--steel);margin-bottom:4px;">Compliance Checklist</h3>
+      <p style="font-size:.86rem;color:var(--mid);margin-bottom:22px;font-weight:300;">Tick all items currently in place at your workplace.</p>
+      <div class="chk-group">
+        <div class="chk-gtitle">Legal Appointments (OHSA / MHSA)</div>
+        <div class="chk-item"><input type="checkbox" id="c1" onchange="updateScore()"/><label for="c1">Section 16.1 CEO / Employer Appointment in place</label></div>
+        <div class="chk-item"><input type="checkbox" id="c2" onchange="updateScore()"/><label for="c2">Section 16.2 Written Assignment(s) to management</label></div>
+        <div class="chk-item"><input type="checkbox" id="c3" onchange="updateScore()"/><label for="c3">Section 8 Competent Persons Appointed (OHS Reps)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c4" onchange="updateScore()"/><label for="c4">First Aid Equipment Appointment (Reg 3 OHSA)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c5" onchange="updateScore()"/><label for="c5">Incident / Accident Investigation Procedure (OHSA S24)</label></div>
+      </div>
+      <div class="chk-group">
+        <div class="chk-gtitle">Risk Management</div>
+        <div class="chk-item"><input type="checkbox" id="c6" onchange="updateScore()"/><label for="c6">Baseline Risk Assessment (current, signed)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c7" onchange="updateScore()"/><label for="c7">Issue-Based / Task Risk Assessments per work activity</label></div>
+        <div class="chk-item"><input type="checkbox" id="c8" onchange="updateScore()"/><label for="c8">Chemical / Substance Hazard Register (OHSA Reg 9)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c9" onchange="updateScore()"/><label for="c9">Emergency Preparedness &amp; Response Plan</label></div>
+      </div>
+      <div class="chk-group">
+        <div class="chk-gtitle">Environmental (NEMA / NEM:WA)</div>
+        <div class="chk-item"><input type="checkbox" id="c10" onchange="updateScore()"/><label for="c10">Monthly Waste Generation Register (GN R634)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c11" onchange="updateScore()"/><label for="c11">Waste Manifest per Regulation 11 (Hazardous Waste)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c12" onchange="updateScore()"/><label for="c12">Registered Waste Disposal Site / Service Provider</label></div>
+        <div class="chk-item"><input type="checkbox" id="c13" onchange="updateScore()"/><label for="c13">Atmospheric Emissions Licence (if applicable)</label></div>
+      </div>
+      <div class="chk-group">
+        <div class="chk-gtitle">Contractor &amp; Training Management</div>
+        <div class="chk-item"><input type="checkbox" id="c14" onchange="updateScore()"/><label for="c14">Contractor Management Procedure (OHSA Section 37)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c15" onchange="updateScore()"/><label for="c15">Induction Training Register (dated, signed)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c16" onchange="updateScore()"/><label for="c16">PPE Issue Register and Training Evidence</label></div>
+        <div class="chk-item"><input type="checkbox" id="c17" onchange="updateScore()"/><label for="c17">Toolbox Talk / Safety Talk Register (monthly minimum)</label></div>
+      </div>
+      <div class="chk-group">
+        <div class="chk-gtitle">Safety File &amp; Physical Compliance</div>
+        <div class="chk-item"><input type="checkbox" id="c18" onchange="updateScore()"/><label for="c18">Site Safety File in place (current, tabbed, indexed)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c19" onchange="updateScore()"/><label for="c19">Mandatory Signage Register (OHSA Reg 9 / SANS 1186)</label></div>
+        <div class="chk-item"><input type="checkbox" id="c20" onchange="updateScore()"/><label for="c20">Fire Equipment Register &amp; Service Certificate</label></div>
+      </div>
+    </div>
+    <div>
+      <div class="score-widget">
+        <div class="score-hdr">
+          <h3>Compliance Score</h3>
+          <p>Based on 20 critical HSSEQ indicators referenced against South African law</p>
+        </div>
+        <div class="score-num" id="scoreNum">0%</div>
+        <div class="score-slbl" id="scoreLbl">Select items above to begin</div>
+        <div class="score-bar-bg"><div class="score-bar" id="scoreBar" style="width:0%"></div></div>
+        <div class="score-hint" id="scoreHint">Tick applicable items to calculate your compliance score</div>
+      </div>
+      <div class="findings-panel" id="findingsPanel">
+        <div class="findings-hdr">
+          <span>Priority Findings</span>
+          <span id="findingCount">0 items</span>
+        </div>
+        <div id="findingsBody">
+          <div class="finding-row"><div class="fdot na"></div><div class="finding-txt" style="color:#999;font-style:italic;">Complete the checklist to generate findings…</div></div>
+        </div>
+      </div>
+      <button class="btn-report" onclick="openReport()">Generate Full Compliance Report ↗</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══════════════════════════════════ -->
+<section id="services">
+  <div class="s-label">Services &amp; Pricing</div>
+  <h2 class="s-title" style="color:var(--paper);">What You <span class="accent">Get</span></h2>
+  <p class="s-body">Every deliverable is built against current South African legislation. No generic templates. Boardroom-ready documents that stand up to DMRE, DFFE, and DoEL scrutiny. Delivered digitally and on a physical memory stick or secure download link.</p>
+
+  <div class="services-grid">
+    <!-- Tier 1 -->
+    <div class="svc-card">
+      <div class="svc-price">R1,500<span> / document</span></div>
+      <div class="svc-name">Essential Document</div>
+      <div class="svc-desc">Single-document compliance deliverable. Perfect for SMEs needing specific legal documentation quickly and accurately.</div>
+      <ul class="svc-feats">
+        <li>Legal Appointment (S16.1 / S16.2 / S8)</li>
+        <li>Risk Assessment (Baseline or Issue-Based)</li>
+        <li>Waste Manifest (Regulation 11 / GN R634)</li>
+        <li>Mandatory Signage Register (SANS 1186)</li>
+        <li>PPE or Safety Training Module</li>
+        <li>Contractor Management Procedure (S37)</li>
+        <li>Any single SA legislation-referenced document</li>
+      </ul>
+      <div class="delivery-note"><p>📧 Delivered via email (PDF + editable Word) within <strong>2–3 business days</strong></p></div>
+    </div>
+
+    <!-- Tier 2 FEATURED -->
+    <div class="svc-card featured">
+      <div class="svc-badge">Most Popular</div>
+      <div class="svc-price">R6,500<span> / site pack</span></div>
+      <div class="svc-name">Site Compliance Pack + Safety File</div>
+      <div class="svc-desc">Complete HSSEQ system including a fully structured Safety File with all templates — everything an inspector needs to see, in one place.</div>
+      <ul class="svc-feats">
+        <li>Full Legal Appointment Register</li>
+        <li>Baseline + Issue-Based Risk Assessments (x2)</li>
+        <li>Emergency Preparedness &amp; Response Plan</li>
+        <li>Waste Generation Register + Waste Manifest</li>
+        <li>Mandatory Signage Register</li>
+        <li>Induction &amp; Training Pack (PPE, Safety, Emergency)</li>
+        <li>Contractor Management Framework (S37)</li>
+        <li>Monthly Compliance Checklist Template</li>
+        <li>EXCO / Board Report Template (LTI tracking)</li>
+        <li style="color:var(--gold);font-weight:500;">📁 Complete Safety File with tabbed index</li>
+        <li style="color:var(--gold);font-weight:500;">All editable templates included</li>
+      </ul>
+      <div class="delivery-note"><p>🖥️ Delivered via <strong>secure Google Drive link</strong> AND posted on a <strong>branded memory stick</strong> — all documents editable and ready to use</p></div>
+    </div>
+
+    <!-- Tier 3 -->
+    <div class="svc-card">
+      <div class="svc-price">R18,000<span> / month</span></div>
+      <div class="svc-name">Monthly Advisory Retainer</div>
+      <div class="svc-desc">Ongoing HSSEQ oversight, document updates, incident support, and regulatory monitoring — senior practitioner on-call.</div>
+      <ul class="svc-feats">
+        <li>Monthly compliance review &amp; document updates</li>
+        <li>Incident investigation support (OHSA S24)</li>
+        <li>Corrective Action Programme management</li>
+        <li>Regulatory change monitoring (DMRE, DFFE, DoEL)</li>
+        <li>EXCO / Board report preparation monthly</li>
+        <li>Audit preparation &amp; finding remediation</li>
+        <li>COIDA return assistance (2026 amendments)</li>
+        <li>Unlimited document requests (24–48hr turnaround)</li>
+        <li style="color:var(--gold);font-weight:500;">📁 Safety File maintenance included</li>
+        <li style="color:var(--gold);font-weight:500;">🔗 Shared live folder — always current</li>
+      </ul>
+      <div class="delivery-note"><p>🔗 Includes a <strong>dedicated shared drive folder</strong> — your documents are always accessible, always up to date, from any device</p></div>
+    </div>
+  </div>
+
+  <!-- Safety File expand section -->
+  <div class="safety-expand">
+    <div class="safety-expand-hdr" onclick="toggleSafetyExpand()">
+      <h3>📁 What's Inside the Safety File?</h3>
+      <span id="sfToggle">▼ EXPAND TO SEE ALL TEMPLATES</span>
+    </div>
+    <div class="safety-expand-body" id="sfBody" style="display:none;">
+      <div class="sf-section">
+        <h4>Section A — Legal &amp; Administrative</h4>
+        <ul>
+          <li>Master document register &amp; index</li>
+          <li>Section 16.1 Employer Appointment</li>
+          <li>Section 16.2 Written Assignments</li>
+          <li>Section 8 OHS Representative Appointments</li>
+          <li>Section 17 Foreman / Supervisor Appointments</li>
+          <li>Section 23 PPE Responsible Person Appointment</li>
+          <li>Section 37(2) Contractor Agreements</li>
+          <li>Organisational HSSEQ structure chart</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section B — Risk Management</h4>
+        <ul>
+          <li>Baseline Risk Assessment template</li>
+          <li>Issue-Based Risk Assessment template (x2)</li>
+          <li>Hazard Identification Register</li>
+          <li>Chemical / Substance Hazard Register</li>
+          <li>Permit to Work template (General)</li>
+          <li>Confined Space Entry Permit template</li>
+          <li>Hot Work Permit template</li>
+          <li>Risk review schedule and log</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section C — Emergency Preparedness</h4>
+        <ul>
+          <li>Emergency Preparedness &amp; Response Plan</li>
+          <li>Emergency contact register</li>
+          <li>Evacuation procedure &amp; assembly points</li>
+          <li>First aid register and equipment checklist</li>
+          <li>Fire equipment register &amp; service log</li>
+          <li>NEMA Section 30 notification flowchart</li>
+          <li>Mock drill record template</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section D — Training &amp; Competency</h4>
+        <ul>
+          <li>Employee induction register template</li>
+          <li>Contractor induction register template</li>
+          <li>PPE issue register (per employee)</li>
+          <li>PPE training module (TM-HSSEQ-PPE-001)</li>
+          <li>Toolbox talk / safety talk record template</li>
+          <li>Training matrix template</li>
+          <li>Competency verification checklist</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section E — Incident Management</h4>
+        <ul>
+          <li>Incident / accident investigation report template</li>
+          <li>Incident register (monthly)</li>
+          <li>OHSA Section 24 notification template</li>
+          <li>Near-miss reporting template</li>
+          <li>Corrective action log</li>
+          <li>LTI-free hours tracker</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section F — Environmental</h4>
+        <ul>
+          <li>Monthly waste generation register (GN R634)</li>
+          <li>Waste manifest template (Regulation 11)</li>
+          <li>Approved waste transporter &amp; disposal register</li>
+          <li>Environmental incident record</li>
+          <li>Spill response procedure</li>
+          <li>Atmospheric emissions monitoring log</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section G — Contractor Management</h4>
+        <ul>
+          <li>Contractor pre-qualification checklist</li>
+          <li>Section 37(2) agreement template</li>
+          <li>Contractor site monitoring record</li>
+          <li>Contractor close-out report template</li>
+        </ul>
+      </div>
+      <div class="sf-section">
+        <h4>Section H — Compliance &amp; Reporting</h4>
+        <ul>
+          <li>Mandatory signage register (SANS 1186)</li>
+          <li>Monthly compliance self-assessment checklist</li>
+          <li>EXCO / Board HSSEQ report template</li>
+          <li>Legal register (applicable legislation)</li>
+          <li>Audit finding tracker</li>
+          <li>COIDA employer return checklist (2026)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LEGISLATION STRIP ══════════════════════════ -->
+<div class="leg-strip">
+  <div class="leg-strip-title">South African Legislative Framework</div>
+  <div class="leg-grid">
+    <div class="leg-card"><div class="leg-act">Act 85 of 1993</div><div class="leg-title">Occupational Health &amp; Safety Act</div></div>
+    <div class="leg-card"><div class="leg-act">Act 29 of 1996</div><div class="leg-title">Mine Health &amp; Safety Act</div></div>
+    <div class="leg-card"><div class="leg-act">Act 130 of 1993</div><div class="leg-title">COIDA (2026 Amendments)</div></div>
+    <div class="leg-card"><div class="leg-act">Act 107 of 1998</div><div class="leg-title">NEMA – National Env. Management</div></div>
+    <div class="leg-card"><div class="leg-act">Act 59 of 2008</div><div class="leg-title">NEM:WA – Waste Act</div></div>
+    <div class="leg-card"><div class="leg-act">GN R634 of 2017</div><div class="leg-title">Waste Classification &amp; Management</div></div>
+    <div class="leg-card"><div class="leg-act">SANS 10108</div><div class="leg-title">Hazardous Area Classification</div></div>
+    <div class="leg-card"><div class="leg-act">Act 66 of 1995</div><div class="leg-title">Labour Relations Act</div></div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══════════════════════════════════════ -->
+<section id="about">
+  <div class="about-frame">
+    <div class="about-name">Chantele Coetzer</div>
+    <div class="about-title">Senior HSSEQ Practitioner · Limpopo</div>
+    <div class="about-stats">
+      <div class="astat"><div class="astat-n">17+</div><div class="astat-l">Years Experience</div></div>
+      <div class="astat"><div class="astat-n">3+</div><div class="astat-l">Multi-Site Portfolios</div></div>
+      <div class="astat"><div class="astat-n">100+</div><div class="astat-l">Documents Delivered</div></div>
+      <div class="astat"><div class="astat-n">100%</div><div class="astat-l">SA Law Aligned</div></div>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="s-label">The Practitioner Behind SafeComply SA</div>
+    <h3>Real Experience.<br/>Real Legislation.<br/>Real Results.</h3>
+    <p>With over 17 years in Health, Safety, Security, Environment, and Quality, I have built HSSEQ departments from the ground up, managed multi-site compliance programmes across mining, processing, and agricultural operations, and navigated DMRE licensing audits, complex contractor management frameworks, and environmental compliance requirements — all within South African law.</p>
+    <p>Based in Phalaborwa, Limpopo, I operate across mining, industrial processing, and environmental project environments. Every document I produce is grounded in the exact legislative framework that South African employers, inspectors, and auditors rely on.</p>
+    <p>My track record includes formal incident investigation reports, EXCO-ready compliance reports, integrated waste management plans, site-specific PMO compliance action plans, and regulatory training modules — all produced to board presentation standard.</p>
+    <div class="tags">
+      <span class="tag">OHSA Act 85/1993</span><span class="tag">MHSA Act 29/1996</span><span class="tag">NEM:WA Compliance</span><span class="tag">COIDA Management</span><span class="tag">DMRE Regulatory Affairs</span><span class="tag">Incident Investigation</span><span class="tag">Contractor Management</span><span class="tag">SANS 10108</span><span class="tag">Legal Appointments</span><span class="tag">Risk Assessment</span><span class="tag">Waste Management</span><span class="tag">Safety File Systems</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIAL ════════════════════════════════ -->
+<div class="testi">
+  <div class="s-label" style="text-align:center;">Client Feedback</div>
+  <blockquote>"The compliance documentation we received was not only legally accurate but structured so our board and external auditors could understand it immediately. We had used three other providers — none came close to this level of legislative precision."</blockquote>
+  <cite>Operations Director · Industrial Processing Operation · Limpopo Province</cite>
+</div>
+
+<!-- ═══ CONTACT ════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-left">
+    <div class="s-label" style="color:var(--gold);">Get in Touch</div>
+    <h2>Ready to Get<br/>Compliant?</h2>
+    <p>Submit your enquiry and receive a tailored proposal within one business day — referenced against the applicable South African legislation for your sector.</p>
+    <div class="contact-details">
+      <div class="cdetail"><div class="cdetail-icon">📧</div><div class="cdetail-text"><strong>Email</strong>cjsnyman1084@gmail.com</div></div>
+      <div class="cdetail"><div class="cdetail-icon">📍</div><div class="cdetail-text"><strong>Location</strong>Phalaborwa, Limpopo · Serving nationally</div></div>
+      <div class="cdetail"><div class="cdetail-icon">⏱️</div><div class="cdetail-text"><strong>Response Time</strong>Within 1 business day</div></div>
+      <div class="cdetail"><div class="cdetail-icon">💾</div><div class="cdetail-text"><strong>Delivery</strong>Email · Secure Link · Memory Stick (posted)</div></div>
+    </div>
+  </div>
+
+  <div class="enquiry-form">
+    <h3>Send an Enquiry</h3>
+    <p>Tell us what you need — we'll come back to you with a tailored quote.</p>
+    <div class="frow frow-2">
+      <input type="text" id="fname" placeholder="Your Full Name" required/>
+      <input type="text" id="fcompany" placeholder="Company Name"/>
+    </div>
+    <div class="frow frow-2">
+      <input type="email" id="femail" placeholder="Email Address" required/>
+      <input type="tel" id="fphone" placeholder="Phone Number"/>
+    </div>
+    <div class="frow frow-2">
+      <select id="fservice">
+        <option value="">— Service Required —</option>
+        <option>Essential Document (R1,500)</option>
+        <option>Site Compliance Pack + Safety File (R6,500)</option>
+        <option>Monthly Advisory Retainer (R18,000/month)</option>
+        <option>Custom / Not Sure Yet</option>
+      </select>
+      <select id="fsector">
+        <option value="">— Industry Sector —</option>
+        <option>Mining &amp; Minerals Processing</option>
+        <option>Construction</option>
+        <option>Manufacturing &amp; Engineering</option>
+        <option>Agriculture &amp; Forestry</option>
+        <option>Logistics &amp; Warehousing</option>
+        <option>Carbon / Environmental Projects</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="frow frow-1">
+      <select id="fdelivery">
+        <option value="">— Preferred Delivery Method —</option>
+        <option>Email only (PDF + Word)</option>
+        <option>Secure Google Drive link</option>
+        <option>Memory stick posted to me</option>
+        <option>Both link and memory stick</option>
+      </select>
+    </div>
+    <div class="frow frow-1">
+      <textarea id="fmessage" placeholder="Briefly describe your compliance needs or the specific documents required…"></textarea>
+    </div>
+    <button class="btn-submit" id="submitBtn" onclick="sendEnquiry()">
+      <span id="submitTxt">Submit Enquiry →</span>
+    </button>
+    <div class="form-msg" id="formMsg"></div>
+    <p class="privacy-note">Your information is kept strictly confidential and used only to respond to your enquiry. We do not share your details with any third party.</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <div>
+    <div class="footer-brand">Safe<em>Comply</em> SA</div>
+    <p>Professional HSSEQ compliance advisory and documentation services for South African organisations. All deliverables are aligned to current South African legislation, regulations, and SANS standards.</p>
+    <p style="margin-top:10px;">Phalaborwa, Limpopo · Serving nationally · cjsnyman1084@gmail.com</p>
+  </div>
+  <div>
+    <h4>Services</h4>
+    <ul>
+      <li><a href="#services">Essential Documents</a></li>
+      <li><a href="#services">Site Compliance Pack + Safety File</a></li>
+      <li><a href="#services">Monthly Advisory Retainer</a></li>
+      <li><a href="#tool">Free Compliance Audit Tool</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Key Legislation</h4>
+    <ul>
+      <li>OHSA Act 85 of 1993</li>
+      <li>MHSA Act 29 of 1996</li>
+      <li>NEM:WA Act 59 of 2008</li>
+      <li>NEMA Act 107 of 1998</li>
+      <li>COIDA Act 130 of 1993</li>
+      <li>GN R634 · SANS 10108 · SANS 1186</li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 SafeComply SA · Chantele Coetzer HSSEQ Advisory · All Rights Reserved</p>
+  <p>Not legal advice. Documents are provided for compliance support purposes. Consult a registered legal practitioner for formal legal opinions.</p>
+</div>
+
+<!-- ═══ REPORT MODAL ═══════════════════════════════ -->
+<div class="modal-overlay" id="reportModal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <h3>HSSEQ Compliance Report</h3>
+      <button class="modal-close" onclick="closeReport()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-ftr">
+      <button class="btn-primary" onclick="closeReport();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Professional Support</button>
+      <button style="background:transparent;border:1.5px solid var(--light);padding:10px 20px;border-radius:var(--r);cursor:pointer;font-family:'Barlow',sans-serif;font-size:.84rem;color:var(--mid);" onclick="closeReport()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════ -->
+<script>
+// ── EMAILJS INIT ─────────────────────────────────────
+// SETUP INSTRUCTIONS FOR CHANTELE:
+// 1. Go to https://www.emailjs.com and sign up free (200 emails/month free)
+// 2. Add Gmail as an Email Service — connect your cjsnyman1084@gmail.com
+// 3. Create an Email Template with these variables:
+//    {{from_name}}, {{from_email}}, {{phone}}, {{company}}, {{service}},
+//    {{sector}}, {{delivery}}, {{message}}
+// 4. Replace the three placeholder values below with your actual IDs:
+const EMAILJS_PUBLIC_KEY  = 'i8VwpSgY2ZpmLnHLX';   // From Account > General
+const EMAILJS_SERVICE_ID  = 'service_b7f25yo';   // From Email Services
+const EMAILJS_TEMPLATE_ID = 'template_esp66on';  // From Email Templates
+
+(function(){
+  if(EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY'){
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+})();
+
+async function sendEnquiry(){
+  const name     = document.getElementById('fname').value.trim();
+  const email    = document.getElementById('femail').value.trim();
+  const company  = document.getElementById('fcompany').value.trim();
+  const phone    = document.getElementById('fphone').value.trim();
+  const service  = document.getElementById('fservice').value;
+  const sector   = document.getElementById('fsector').value;
+  const delivery = document.getElementById('fdelivery').value;
+  const message  = document.getElementById('fmessage').value.trim();
+  const btn      = document.getElementById('submitBtn');
+  const txt      = document.getElementById('submitTxt');
+  const msg      = document.getElementById('formMsg');
+
+  msg.className = 'form-msg';
+  msg.style.display = 'none';
+
+  if(!name || !email){
+    msg.className = 'form-msg error';
+    msg.textContent = 'Please enter your name and email address to submit an enquiry.';
+    return;
+  }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRe.test(email)){
+    msg.className = 'form-msg error';
+    msg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  btn.disabled = true;
+  txt.textContent = 'Sending…';
+
+  const templateParams = {
+    to_email : 'cjsnyman1084@gmail.com',
+    from_name: name,
+    from_email: email,
+    phone    : phone || 'Not provided',
+    company  : company || 'Not provided',
+    service  : service || 'Not specified',
+    sector   : sector  || 'Not specified',
+    delivery : delivery || 'Not specified',
+    message  : message  || 'No additional message provided.',
+  };
+
+  // If EmailJS is configured, send via API
+  if(EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY'){
+    try{
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      msg.className = 'form-msg success';
+      msg.textContent = `Thank you, ${name}! Your enquiry has been received. Chantele will respond to ${email} within one business day.`;
+      document.getElementById('fname').value = '';
+      document.getElementById('femail').value = '';
+      document.getElementById('fcompany').value = '';
+      document.getElementById('fphone').value = '';
+      document.getElementById('fservice').value = '';
+      document.getElementById('fsector').value = '';
+      document.getElementById('fdelivery').value = '';
+      document.getElementById('fmessage').value = '';
+    }catch(err){
+      msg.className = 'form-msg error';
+      msg.textContent = 'There was a problem sending your enquiry. Please email cjsnyman1084@gmail.com directly.';
+    }
+  } else {
+    // Fallback: open mailto (works even without EmailJS setup)
+    const subject = encodeURIComponent(`SafeComply SA Enquiry – ${service || 'General'} – ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone||'—'}\nCompany: ${company||'—'}\n`+
+      `Service: ${service||'—'}\nSector: ${sector||'—'}\nDelivery: ${delivery||'—'}\n\n${message||'—'}`
+    );
+    window.location.href = `mailto:cjsnyman1084@gmail.com?subject=${subject}&body=${body}`;
+    msg.className = 'form-msg success';
+    msg.textContent = `Thank you, ${name}! Your email client has been opened. Alternatively, email cjsnyman1084@gmail.com directly.`;
+  }
+
+  btn.disabled = false;
+  txt.textContent = 'Submit Enquiry →';
+}
+
+// ── AUDIT TOOL ────────────────────────────────────────
+const checkboxData = [
+  {id:'c1', label:'Section 16.1 CEO Appointment',              ref:'OHSA S16(1)',    p:'high'},
+  {id:'c2', label:'Section 16.2 Written Assignments',           ref:'OHSA S16(2)',    p:'high'},
+  {id:'c3', label:'Section 8 Competent OHS Representatives',    ref:'OHSA S8',        p:'high'},
+  {id:'c4', label:'First Aid Equipment Appointment',            ref:'OHSA Reg 3',     p:'med'},
+  {id:'c5', label:'Incident Investigation Procedure',           ref:'OHSA S24',       p:'high'},
+  {id:'c6', label:'Baseline Risk Assessment',                   ref:'OHSA S8(1)',     p:'high'},
+  {id:'c7', label:'Issue-Based Risk Assessments',               ref:'OHSA GMR 2(7)', p:'high'},
+  {id:'c8', label:'Chemical / Substance Hazard Register',       ref:'OHSA Reg 9',    p:'med'},
+  {id:'c9', label:'Emergency Preparedness & Response Plan',     ref:'OHSA S8(2)(f)', p:'high'},
+  {id:'c10',label:'Monthly Waste Generation Register',          ref:'GN R634 Reg 11',p:'med'},
+  {id:'c11',label:'Waste Manifest – Hazardous Waste',           ref:'NEM:WA Reg 11', p:'high'},
+  {id:'c12',label:'Registered Waste Disposal Provider',         ref:'NEM:WA S26',    p:'med'},
+  {id:'c13',label:'Atmospheric Emissions Licence',              ref:'NEMA AEL',      p:'low'},
+  {id:'c14',label:'Contractor Management Procedure',            ref:'OHSA S37',      p:'high'},
+  {id:'c15',label:'Induction Training Register',                ref:'OHSA S8(3)',    p:'med'},
+  {id:'c16',label:'PPE Issue Register & Training Evidence',     ref:'OHSA S23',      p:'med'},
+  {id:'c17',label:'Toolbox Talk Register (monthly)',            ref:'OHSA S13',      p:'low'},
+  {id:'c18',label:'Site Safety File (current, indexed)',        ref:'OHSA S8 / S37', p:'high'},
+  {id:'c19',label:'Mandatory Signage Register',                 ref:'OHSA Reg 9',    p:'med'},
+  {id:'c20',label:'Fire Equipment Register & Service Cert',     ref:'OHSA Reg 5',    p:'high'},
+];
+
+function updateScore(){
+  const total = checkboxData.length;
+  let checked = checkboxData.filter(i=>document.getElementById(i.id)?.checked).length;
+  const pct = Math.round((checked/total)*100);
+  const numEl = document.getElementById('scoreNum');
+  const barEl = document.getElementById('scoreBar');
+  const lblEl = document.getElementById('scoreLbl');
+  const hntEl = document.getElementById('scoreHint');
+  const cntEl = document.getElementById('findingCount');
+
+  numEl.textContent = pct+'%';
+  barEl.style.width = pct+'%';
+  numEl.className = 'score-num';
+  if(pct<40){numEl.classList.add('red');lblEl.textContent='CRITICAL — High Legal Exposure';}
+  else if(pct<70){numEl.classList.add('amber');lblEl.textContent='MODERATE — Action Required';}
+  else if(pct<90){numEl.classList.add('amber');lblEl.textContent='DEVELOPING — Good Progress';}
+  else{numEl.classList.add('green');lblEl.textContent='STRONG — Maintain & Improve';}
+  hntEl.textContent = checked+' of '+total+' items in place · '+(total-checked)+' items require attention';
+
+  const missing = checkboxData.filter(i=>!document.getElementById(i.id)?.checked);
+  cntEl.textContent = missing.length+' items';
+  const body = document.getElementById('findingsBody');
+  if(missing.length===0){
+    body.innerHTML='<div class="finding-row"><div class="fdot pass"></div><div class="finding-txt">All 20 items confirmed. Excellent compliance posture.</div></div>';
+    return;
+  }
+  const sorted = [...missing].sort((a,b)=>({high:0,med:1,low:2}[a.p]-{high:0,med:1,low:2}[b.p]));
+  body.innerHTML = sorted.slice(0,8).map(f=>`
+    <div class="finding-row">
+      <div class="fdot fail"></div>
+      <div class="finding-txt">${f.label}</div>
+      <div class="finding-ref">${f.ref}</div>
+    </div>`).join('');
+  if(missing.length>8) body.innerHTML+=`<div class="finding-row" style="justify-content:center;color:#999;font-size:.8rem;font-style:italic;">+ ${missing.length-8} more · Generate report to view all</div>`;
+}
+
+function openReport(){
+  const total = checkboxData.length;
+  const checked = checkboxData.filter(i=>document.getElementById(i.id)?.checked).length;
+  const pct = Math.round((checked/total)*100);
+  const missing = checkboxData.filter(i=>!document.getElementById(i.id)?.checked);
+  const present = checkboxData.filter(i=>document.getElementById(i.id)?.checked);
+  const groups = {high:[],med:[],low:[]};
+  missing.forEach(f=>groups[f.p].push(f));
+  const pmap={high:'HIGH PRIORITY',med:'MEDIUM PRIORITY',low:'LOW PRIORITY'};
+  const cmap={high:'p-h',med:'p-m',low:'p-l'};
+  let html=`<div class="report-sec"><h4>Compliance Summary</h4>
+    <div class="r-item"><span style="font-family:'Playfair Display',serif;font-size:2.2rem;color:${pct<40?'#c62828':pct<70?'#f57f17':'#2e7d32'}">${pct}%</span>
+    <span style="color:#666">${checked} of ${total} indicators confirmed · ${missing.length} items require attention</span></div></div>`;
+  ['high','med','low'].forEach(p=>{
+    if(!groups[p].length)return;
+    html+=`<div class="report-sec"><h4>${pmap[p]} (${groups[p].length})</h4>`;
+    groups[p].forEach(f=>{html+=`<div class="r-item"><span class="r-priority ${cmap[p]}">${p.toUpperCase()}</span><span style="flex:1">${f.label}</span><span style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:#666;background:#f6f1e9;padding:2px 8px;border-radius:2px;">${f.ref}</span></div>`;});
+    html+='</div>';
+  });
+  if(present.length){
+    html+=`<div class="report-sec"><h4>Confirmed In Place (${present.length})</h4>`;
+    present.forEach(f=>{html+=`<div class="r-item"><span class="r-priority p-pass">PASS</span><span style="flex:1">${f.label}</span><span style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:#666;background:#f6f1e9;padding:2px 8px;border-radius:2px;">${f.ref}</span></div>`;});
+    html+='</div>';
+  }
+  html+=`<div class="report-sec"><h4>Recommended Next Steps</h4><div class="r-item" style="display:block;padding:12px 0;">
+    <p style="font-size:.86rem;color:#4e5f6a;line-height:1.7;">
+    ${pct<40?'🔴 <strong>URGENT ACTION REQUIRED.</strong> Your organisation faces significant legal exposure under the Occupational Health &amp; Safety Act 85 of 1993. A comprehensive compliance intervention including a full Safety File and all legal appointments is needed immediately.':pct<70?'🟡 <strong>STRUCTURED REMEDIATION NEEDED.</strong> Several high-priority items require attention. A Site Compliance Pack including a complete Safety File will address the majority of identified gaps.':'🟢 <strong>GOOD FOUNDATION.</strong> Your compliance posture is developing well. Targeted document production and a monthly advisory retainer can close remaining gaps and keep your system current.'}
+    <br/><br/>All identified gaps can be remediated with professionally produced, legislation-aligned documentation and a properly structured Safety File — delivered to your email, on a secure link, or on a memory stick. Contact SafeComply SA for a tailored proposal.
+    </p></div></div>`;
+  document.getElementById('modalBody').innerHTML=html;
+  document.getElementById('reportModal').classList.add('open');
+}
+function closeReport(){document.getElementById('reportModal').classList.remove('open');}
+document.getElementById('reportModal').addEventListener('click',function(e){if(e.target===this)closeReport();});
+
+// ── SAFETY FILE EXPAND ────────────────────────────────
+function toggleSafetyExpand(){
+  const body = document.getElementById('sfBody');
+  const toggle = document.getElementById('sfToggle');
+  if(body.style.display==='none'){
+    body.style.display='grid';
+    toggle.textContent='▲ COLLAPSE';
+  } else {
+    body.style.display='none';
+    toggle.textContent='▼ EXPAND TO SEE ALL TEMPLATES';
+  }
+}
+
+// ── ENTER KEY SUBMIT ──────────────────────────────────
+document.addEventListener('keydown',function(e){
+  if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){
+    const activeEl = document.activeElement;
+    if(['fname','femail','fcompany','fphone'].includes(activeEl?.id)) sendEnquiry();
+  }
+});
+</script>
+</body>
+</html>
